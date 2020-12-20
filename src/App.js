@@ -1,32 +1,33 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import UserInfo from './component/UserInfo';
+import CustomButton from './component/CustomButton';
 
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-//declaring global
-let test = 'test';
-let isAvaialble = true;
+    //creating state
+    this.state = {
+      name: 'Alpha',
+      age: 30,
+    };
+  }
 
-const App = () => {
+  pressed = () => {
+    this.setState({name: 'Beta'});
+  };
 
-  //local const cannot be modified
-  const testArray = [{name: 'test'}];
-
-  //local variable can be modified 
-  let name="test";
-
-  return (
-    <View>
-      <Text>{test}</Text>
-    </View>
-  );
-};
+  render() {
+    return (
+      <SafeAreaView>
+        <View style={{alignItems: 'center'}}>
+          <UserInfo name={this.state.name} age={this.state.age} />
+          <CustomButton onPress={this.pressed} label={'Done'} />
+        </View>
+      </SafeAreaView>
+    );
+  }
+}
 
 export default App;
