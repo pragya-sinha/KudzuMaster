@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, View, StyleSheet, FlatList } from 'react-native';
-import Food from '../src/Food';
+import Food from '../src/pages/Food';
 import CustomButton from '../src/CustomButton';
-import Route from './routes/routes';
+import Route from '../src/routes/routes';
 
 
 class App extends React.Component {
